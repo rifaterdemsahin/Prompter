@@ -47,7 +47,7 @@
         <button onclick="location.reload(true)">Refresh Page</button>
         <p id="version"></p>
         <button onclick="toggleBoldText()">Toggle Bold Text</button>
-        <button onclick="toggleRotation()">Toggle Rotation & Invert Colors</button>
+        <button onclick="toggleMirror()">Toggle Rotation & Invert Colors</button>
         <button onclick="location.reload(true)">Refresh Page</button>
 
         <hr>
@@ -197,6 +197,17 @@ PAST
     <script>
         // Function to toggle mirror and invert colors
         function toggleMirror() {
+            document.body.classList.toggle('mirrored');
+            document.body.classList.toggle('inverted');
+        }
+
+        // Function to toggle bold text
+        function toggleBoldText() {
+            document.body.style.fontWeight = document.body.style.fontWeight === 'bold' ? 'normal' : 'bold';
+        }
+
+        // Function to toggle rotation and invert colors
+        function toggleRotation() {
             document.body.classList.toggle('mirrored');
             document.body.classList.toggle('inverted');
         }
