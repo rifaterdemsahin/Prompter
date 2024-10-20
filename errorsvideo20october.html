@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROMPT HELPER</title>
     <style>
+        body.inverted {
+            background-color: black;
+            color: white;
+        }
         .rotated {
             transform: rotate(180deg);
         }
@@ -18,7 +22,7 @@
 <body>
     <div class="centered">
         <h1>🚀 PROMPT HELPER</h1>
-        <button onclick="toggleRotation()">Toggle Rotation & Invert Colors</button>
+        <button onclick="toggleRotationAndInvert()">Toggle Rotation & Invert Colors</button>
 
         <hr>
 
@@ -80,7 +84,7 @@ PAST
         <p>🚀 IF YOU HAVE STARTED ANY WORK, THAT'S YOUR MAIN PIVOT POINT. AS A PROBLEM-ORIENTED PERSON, I PREFER TO DOCUMENT IT RATHER THAN JUMPING TO THE NEXT PROBLEM.</p>
 
         <h3>SHOW</h3>
-        <p>🖼️ HERE IS WHERE I GOT STUCK ON THE PROMETHUES DATA SOURCE THAT I AM STUCK </p>
+        <p>🖼️ HERE IS WHERE I GOT STUCK ON THE PROMETHEUS DATA SOURCE THAT I AM STUCK </p>
         <p>🖼️ IN 10 STEPS IT WORKED</p>
         <p>🖼️ IN 30 STEPS I GOT STUCK</p>
         <p>🖼️ IN 70 STEPS I GOT CONNECTED</p>
@@ -94,7 +98,7 @@ PAST
 
         <h3>APPLY</h3>
         <p>🔍 GO AHEAD IF YOU ARE IN IT OPEN YOUR REPO AND START WORKING.</p>
-        <p>🔍 ADD IT IN THE COMMENTS    I WOULD CHECK AND GIVE FEEDBACK WITH OTHERS</p>
+        <p>🔍 ADD IT IN THE COMMENTS I WOULD CHECK AND GIVE FEEDBACK WITH OTHERS</p>
 
         <hr>
 
@@ -105,11 +109,11 @@ PAST
         <p id="version"></p>
         <script>
             function getVersion() {
-            const date = new Date();
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
-            return `Version: ${year}.${month}.${day}`;
+                const date = new Date();
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                return `Version: ${year}.${month}.${day}`;
             }
 
             document.getElementById('version').innerText = getVersion();
@@ -123,85 +127,13 @@ PAST
         <p>🤖 WHEN I MOVE INTO THE SYMBOLS STAGE, I USE GPT TO FORMULATE THE THINGS I NEED, AND THEY GO INTO THE MARKDOWN FILES.</p>
         <p>🗺️ AFTER THE MARKDOWN FILES, WE DRAW A MAP AND PLACE ALL THE SYMBOLS. BEFORE ANY WORK STARTS, WE MUST KNOW THE LOCATION AND DIRECTION OF OUR SYMBOLS.</p>
         <p>🐛 THEN IT'S TIME TO FIND THE ERRORS AND DOCUMENT THEM.</p>
-        <p>📊 WHILE ALL OF THIS HAPPENS, I INDEX ALL THE ACTIONS AND KEEP ONE CENTRAL DOCUMENT FOR MY JOURNEY, FOCUSING ON IMPROVING IT FASTER AND BETTER WITH EACH ITERATION.</p>
-        <p>💡 SO, TO LEVERAGE ERRORS, I USE THE FRAMEWORK AND DOCUMENT THEM IN THE MOST AI-FRIENDLY PLACE, WHICH IS GIT.</p>
+        <p>📊 WHILE ALL OF THIS HAPPENS, I INDEX ALL THE ACTIONS AND KEEP ONE CENTRAL DOCUMENT FOR MY JOURNEY, FOCUSING ON...
 
-        <h3>SHOW</h3>
-        <p>📊 HERE IS THE FOLDER STRUCTURE I HAVE CREATED FOR MYSELF</p>
-        <p>📊 THIS ALSO EVOLVES WITH TIME</p>
-        <p>📊 FEEL THE ACTION EVERYTHIME I MOVE ONE STEP FORWARD AND USE THE NUMBER AS AN INDEX FOR ME TO FOLLOW</p>
-        <p>📊 I DO HAVE LITTLE CHEATS FOR MYSELF TO FOLLOW LIKE THE INDEX AND PRACTICAL PUSH</p>
-
-        <h3>DO</h3>
-        <p>🏗️ Exercise: Create a folder structure for your current project following the "Real," "Imaginary," and "Symbols" stages.</p>
-
-        <h3>APPLY</h3>
-        <p>🔄 Start documenting your learning process and errors in your newly created folder structure.</p>
-
-        <hr>
-
-        <h2>🎞️ Act III</h2>
-        <pre><code>HOW CONNECT THE DOTS
-</code></pre>
-        <h3>TELL</h3>
-        <p>🔄 THE ENTIRE PROCESS IS ABOUT ITERATING WITH AI.</p>
-        <p>💰 AI HAS BEEN TRAINED WITH MILLIONS OF DOLLARS TO HELP US BECOME BETTER VERSIONS OF OURSELVES.</p>
-        <p>👨‍✈️ THE COPILOT WORKS IN THE BACKGROUND.</p>
-        <p>💻 THE MOST CODE-FRIENDLY PLACE TO TRAIN MY MODELS IS GIT.</p>
-        <p>📝 YOU CAN ALSO DO THIS IN NOTION, WHERE THEY OFFER SOMETHING SIMILAR,</p>
-        <p>🚀 BUT WHY NOT USE GIT AND CODESPACES IN AN ENVIRONMENT WHERE I CAN RUN SCRIPTS AND CODE, WITH THE EXTENSION OF MY WORK?</p>
-
-        <h3>SHOW</h3>
-        <p>🖥️ USING THE COPILOT TO WRITE CODE AND THEN PUSHING IT TO GITHUB</p>
-        <p>🖥️ WORKING ON A REAL WORLD TASK</p>
-        <p>🖥️ AND I CAN LEARN WHAT I AM MISSING WITH THE AI WHICH IS ALREADY TRAINED AND ALSO GETS TRAINED ON MY DATA</p>
-
-        <h3>DO</h3>
-        <p>🛠️ LETS SEE HOW IT DOES THE MAGIC </p>
-        <p>🛠️ HOW I WRITE THE STEPS WITH THE GPT</p>
-        <p>🛠️ HOW I ADD EMOJIS</p>
-        <p>🛠️ HOW I CREATE MARKDOWNS</p>
-        <p>🛠️ HOW I CREATE DIAGRAMS</p>
-        <p>💎 VALUE: CONVERGE AND DIVERGE POINTS</p>
-        
-
-        <h3>APPLY</h3>
-        <p>🔄 Integrate AI tools into your daily workflow and document how they improve your productivity and learning process.</p>
-        <p>🔄 SIGNUP FOR GITHUB AND USE FREE CODESPACES</p>
-        <p>🔄 COPILOT HAS A FREE VERSION</p>
-
-        <hr>
-
-        <h2>🔗 CLOSURE</h2>
-        <p>IF YOU LIKE THIS VIDEO, I HAVE MORE VIDEOS AND COURSES ON THIS CHANNEL TO HELP YOU LEARN HOW TO TEACH YOURSELF, MAKE IT WORK, AND IMPROVE YOUR CRAFT.</p>
-    </div>
-
-    <script>
-        let isRotated = false;
-        let isInverted = false;
-
-        function toggleRotation() {
-            const elements = document.querySelectorAll('body p, body h1, body h2, body pre code');
-
-            elements.forEach(element => {
-                // Toggle rotation
-                if (isRotated) {
-                    element.classList.remove('rotated');
-                } else {
-                    element.classList.add('rotated');
-                }
-
-                // Toggle color inversion
-                const currentColor = window.getComputedStyle(element).color;
-                const currentBgColor = window.getComputedStyle(element).backgroundColor;
-
-                element.style.color = currentColor === 'rgb(0, 0, 0)' ? 'white' : 'black';
-                element.style.backgroundColor = currentBgColor === 'rgb(255, 255, 255)' ? 'black' : 'white';
-            });
-
-            isRotated = !isRotated;
-            isInverted = !isInverted;
-        }
-    </script>
+        <script>
+            function toggleRotationAndInvert() {
+                document.body.classList.toggle('rotated');
+                document.body.classList.toggle('inverted');
+            }
+        </script>
 </body>
 </html>
