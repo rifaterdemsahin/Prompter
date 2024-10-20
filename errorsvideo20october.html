@@ -11,8 +11,8 @@
             transition: background-color 0.5s, color 0.5s;
         }
 
-        .rotated {
-            transform: rotate(180deg);
+        .mirrored {
+            transform: scaleX(-1);
         }
 
         .inverted {
@@ -36,7 +36,7 @@
 <body>
     <div class="centered">
         <h1>🚀 PROMPT HELPER</h1>
-        <button onclick="toggleRotation()">Toggle Rotation & Invert Colors</button>
+        <button onclick="toggleMirror()">Toggle Mirror & Invert Colors</button>
 
         <hr>
 
@@ -58,8 +58,8 @@ PRESENT
     </div>
 
     <script>
-        function toggleRotation() {
-            document.body.classList.toggle('rotated');
+        function toggleMirror() {
+            document.body.classList.toggle('mirrored');
             document.body.classList.toggle('inverted');
         }
     </script>
