@@ -21,11 +21,6 @@
             transform: scaleX(-1);
         }
 
-        .inverted {
-            background-color: white;
-            color: black;
-        }
-
         .centered {
             width: 33%;
             margin: 0 auto;
@@ -60,8 +55,7 @@
         <button onclick="location.reload(true)">Refresh Page</button>
         <p id="version"></p>
         <button onclick="toggleBoldText()">Toggle Bold Text</button>
-        <button onclick="toggleMirror()">Toggle Rotation & Invert Colors</button>
-        <button onclick="location.reload(true)">Refresh Page</button>
+        <button onclick="toggleMirror()">Toggle Rotation</button>
 
         <div class="section section-1">
             <h2>💪 PAIN AND GAIN</h2>
@@ -195,21 +189,14 @@ PAST
     </div>
 
     <script>
-        // Function to toggle mirror and invert colors
+        // Function to toggle mirror
         function toggleMirror() {
             document.body.classList.toggle('mirrored');
-            document.body.classList.toggle('inverted');
         }
 
         // Function to toggle bold text
         function toggleBoldText() {
             document.body.style.fontWeight = document.body.style.fontWeight === 'bold' ? 'normal' : 'bold';
-        }
-
-        // Function to toggle rotation and invert colors
-        function toggleRotation() {
-            document.body.classList.toggle('mirrored');
-            document.body.classList.toggle('inverted');
         }
 
         // Function to generate version number based on the current date
