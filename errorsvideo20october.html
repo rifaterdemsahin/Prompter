@@ -142,7 +142,7 @@ PAST
         <h3>SHOW</h3>
         <p>🖥️ USING THE COPILOT TO WRITE CODE AND THEN PUSHING IT TO GITHUB</p>
         <p>🖥️ WORKING ON A REAL WORLD TASK</p>
-        <p>🖥️ AND I CAN LEARN WHAT I AM MISSING WITH THE AI WHICH IS ALREADY TRAINED AND ALSO GETS TRAINED ON MY DATA/p>
+        <p>🖥️ AND I CAN LEARN WHAT I AM MISSING WITH THE AI WHICH IS ALREADY TRAINED AND ALSO GETS TRAINED ON MY DATA</p>
 
         <h3>DO</h3>
         <p>🛠️ LETS SEE HOW IT DOES THE MAGIC </p>
@@ -180,15 +180,11 @@ PAST
                 }
 
                 // Toggle color inversion
-                if (!element.style.color) {
-                    element.style.color = 'black';
-                }
-                if (!element.style.backgroundColor) {
-                    element.style.backgroundColor = 'white';
-                }
+                const currentColor = window.getComputedStyle(element).color;
+                const currentBgColor = window.getComputedStyle(element).backgroundColor;
 
-                element.style.color = element.style.color === 'black' ? 'white' : 'black';
-                element.style.backgroundColor = element.style.backgroundColor === 'white' ? 'black' : 'white';
+                element.style.color = currentColor === 'rgb(0, 0, 0)' ? 'white' : 'black';
+                element.style.backgroundColor = currentBgColor === 'rgb(255, 255, 255)' ? 'black' : 'white';
             });
 
             isRotated = !isRotated;
