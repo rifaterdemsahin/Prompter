@@ -102,6 +102,18 @@ PAST
         <pre><code>HOW CLIMAX
 </code></pre>
         <h3>TELL</h3>
+        <p id="version"></p>
+        <script>
+            function getVersion() {
+            const date = new Date();
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `Version: ${year}.${month}.${day}`;
+            }
+
+            document.getElementById('version').innerText = getVersion();
+        </script>
         <p>🛠️ THE NEXT STAGE IS HAVING A FRAMEWORK, WHICH I SHARED IN PREVIOUS VIDEOS.</p>
         <p>👶 LET'S LOOK AT THE 7 BABY STEPS FOR YOU TO LEARN USING LACAN'S TRIAD IN THE SELF-LEARNING PROCESS.</p>
         <p>🌟 EVERYTHING STARTS WITH THE "REAL" STAGE, WHERE I CREATE A FOLDER FOR IT.</p>
