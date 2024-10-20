@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROMPT HELPER</title>
+
+    <!-- Disable caching -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <style>
         body {
             background-color: white;
@@ -36,6 +42,7 @@
 <body>
     <div class="centered">
         <h1>🚀 PROMPT HELPER</h1>
+        <p id="version"></p> <!-- Version number placeholder -->
         <button onclick="toggleMirror()">Toggle Mirror & Invert Colors</button>
 
         <hr>
@@ -58,10 +65,37 @@ PRESENT
     </div>
 
     <script>
+        // Function to toggle mirror and invert colors
         function toggleMirror() {
             document.body.classList.toggle('mirrored');
             document.body.classList.toggle('inverted');
         }
+
+        // Function to generate version number based on the current date
+        function getVersion() {
+            const date = new Date();
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `Version: ${year}.${month}.${day}`;
+        }
+
+        // Set version number on the page
+        document.getElementById('version').innerText = getVersion();
+
+        // Disable caching by adding a cache-busting query to all links and resources
+        function cacheBust() {
+            const elements = document.querySelectorAll('link, script, img');
+            elements.forEach((element) => {
+                const srcAttr = element.tagName === 'LINK' ? 'href' : 'src';
+                const url = element.getAttribute(srcAttr);
+                if (url) {
+                    element.setAttribute(srcAttr, `${url}?v=${new Date().getTime()}`);
+                }
+            });
+        }
+
+        cacheBust(); // Apply cache-busting
     </script>
 </body>
 </html>
