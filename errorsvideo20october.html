@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROMPT HELPER</title>
     <style>
-        body.inverted {
-            background-color: black;
-            color: white;
+        body {
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s, color 0.5s;
         }
+
         .rotated {
             transform: rotate(180deg);
         }
+
+        .inverted {
+            background-color: black;
+            color: white;
+        }
+
         .centered {
             width: 33%;
             margin: 0 auto;
             text-align: center;
+        }
+
+        button {
+            padding: 10px;
+            margin: 20px 0;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="centered">
         <h1>🚀 PROMPT HELPER</h1>
-        <button onclick="toggleRotationAndInvert()">Toggle Rotation & Invert Colors</button>
+        <button onclick="toggleRotation()">Toggle Rotation & Invert Colors</button>
 
         <hr>
 
@@ -40,100 +54,14 @@ PRESENT
         <p>🔄 THE SKILLS NEEDED ARE CHANGING FOR EVERYONE.</p>
         <p>💎 VALUE: poverty is the main issue</p>
 
-        <hr>
+        <!-- More content here -->
+    </div>
 
-        <h2>🚨 Problem</h2>
-        <pre><code>TIMING
-PAST
-</code></pre>
-        <p>💸 WE HAVE SEEN POVERTY.</p>
-        <p>💥 WE HAVE SEEN WARS.</p>
-        <p>📉 WE HAVE EXPERIENCED TIMES WHEN WE WERE NOT ADVANCED OR PROGRESSING.</p>
-        <p>⚠️ CHAOS ALWAYS TOOK OVER.</p>
-        <p>🚫 WE WERE TAUGHT TO AVOID AND OVERLOOK ERRORS WHENEVER WE ENCOUNTERED THEM.</p>
-        <p>🔄 THE WAY WE WERE TAUGHT NO LONGER SUFFICES, AS THE REQUIRED SKILLS ARE CONSTANTLY EVOLVING.</p>
-
-        <hr>
-
-        <h2>💪 Flex</h2>
-        <pre><code>WHO
-    </code></pre>
-        <p>👋 HEY, THIS IS ERDEM. I HAVE BEEN THROUGH UPS AND DOWNS, MADE A MILLION, AND ALSO FACED UNIVERSAL CREDIT.</p>
-        <p>🌍 I HAVE LIVED IN AUTOCRATIC AS WELL AS DEMOCRATIC COUNTRIES. I HAVE LIVED IN 10 CITIES, WORKED ON 5 CONTINENTS, AND LEARNED HOW TO LEVERAGE MY SKILLS.</p>
-        <p>🏠 CURRENTLY, I LIVE IN THE UK AND AM AN ACTIVE IMMIGRANT, CONTINUING MY WORK JOURNEY.</p>
-
-        <hr>
-
-        <h2>🛠️ Solution</h2>
-        <pre><code>HOW
-    </code></pre>
-        <p>🎯 GOAL: WE WILL FIRST FOCUS ON IDENTIFYING THE ERRORS AS OUR MAIN GOAL.</p>
-        <p>📋 SECOND: WE HAVE A FRAMEWORK.</p>
-        <p>🔄 THIRD: WE ITERATE THROUGH THE PROCESS.</p>
-
-        <hr>
-
-        <h2>🎬 Act I</h2>
-        <pre><code>HOW SETUP
-</code></pre>
-        <h3>TELL</h3>
-        <p>😰 NO ONE LIKES ERRORS, AND WE GET STRESSED ABOUT THEM.</p>
-        <p>🔄 BUT WE NEED TO CHANGE HOW WE VIEW ERRORS.</p>
-        <p>🏃‍♂️ YES, WE NEED TO RUN TOWARDS THEM BECAUSE THEY ARE THE MAIN OBSTACLES IN OUR MINDS.</p>
-        <p>🆘 IN THE NEXT SECTION, I WILL SHOW YOU HOW YOU CAN GET HELP.</p>
-        <p>🚀 IF YOU HAVE STARTED ANY WORK, THAT'S YOUR MAIN PIVOT POINT. AS A PROBLEM-ORIENTED PERSON, I PREFER TO DOCUMENT IT RATHER THAN JUMPING TO THE NEXT PROBLEM.</p>
-
-        <h3>SHOW</h3>
-        <p>🖼️ HERE IS WHERE I GOT STUCK ON THE PROMETHEUS DATA SOURCE THAT I AM STUCK </p>
-        <p>🖼️ IN 10 STEPS IT WORKED</p>
-        <p>🖼️ IN 30 STEPS I GOT STUCK</p>
-        <p>🖼️ IN 70 STEPS I GOT CONNECTED</p>
-        <p>🖼️ IN 90 STEPS PAIRED AND SAW THE PROMETHEUS METRICS</p>
-
-        <h3>DO</h3>
-        <p>✍️I CREATE A BASIC GITHUB REPO AND START WORKING FROM THERE</p>
-        <p>✍️WITH GPT IT DOES NOT NEED TO BE ONLY CODING TASKS BUT REAL WORLD TASKS</p>
-        <p>✍️HAVING THE CORRECT ENVIROMENT MATTERS </p>
-        <p>✍️</p>
-
-        <h3>APPLY</h3>
-        <p>🔍 GO AHEAD IF YOU ARE IN IT OPEN YOUR REPO AND START WORKING.</p>
-        <p>🔍 ADD IT IN THE COMMENTS I WOULD CHECK AND GIVE FEEDBACK WITH OTHERS</p>
-
-        <hr>
-
-        <h2>🎥 Act II</h2>
-        <pre><code>HOW CLIMAX
-</code></pre>
-        <h3>TELL</h3>
-        <p id="version"></p>
-        <script>
-            function getVersion() {
-                const date = new Date();
-                const year = date.getFullYear();
-                const month = String(date.getMonth() + 1).padStart(2, '0');
-                const day = String(date.getDate()).padStart(2, '0');
-                return `Version: ${year}.${month}.${day}`;
-            }
-
-            document.getElementById('version').innerText = getVersion();
-        </script>
-        <p>🛠️ THE NEXT STAGE IS HAVING A FRAMEWORK, WHICH I SHARED IN PREVIOUS VIDEOS.</p>
-        <p>👶 LET'S LOOK AT THE 7 BABY STEPS FOR YOU TO LEARN USING LACAN'S TRIAD IN THE SELF-LEARNING PROCESS.</p>
-        <p>🌟 EVERYTHING STARTS WITH THE "REAL" STAGE, WHERE I CREATE A FOLDER FOR IT.</p>
-        <p>🔄 AFTER THAT, I REALIZE EVERYTHING IS CREATED IN AN ENVIRONMENT THAT COUNTERBALANCES THE SYMBOLS WE LEARN.</p>
-        <p>🔀 WE EITHER CHANGE THE SYMBOLS OR THE ENVIRONMENT.</p>
-        <p>🖼️ THEN WE MOVE ON TO THE "IMAGINARY" STAGE, WHERE I TAKE A SCREENSHOT OF EVERYTHING I LEARN AND DOCUMENT IT.</p>
-        <p>🤖 WHEN I MOVE INTO THE SYMBOLS STAGE, I USE GPT TO FORMULATE THE THINGS I NEED, AND THEY GO INTO THE MARKDOWN FILES.</p>
-        <p>🗺️ AFTER THE MARKDOWN FILES, WE DRAW A MAP AND PLACE ALL THE SYMBOLS. BEFORE ANY WORK STARTS, WE MUST KNOW THE LOCATION AND DIRECTION OF OUR SYMBOLS.</p>
-        <p>🐛 THEN IT'S TIME TO FIND THE ERRORS AND DOCUMENT THEM.</p>
-        <p>📊 WHILE ALL OF THIS HAPPENS, I INDEX ALL THE ACTIONS AND KEEP ONE CENTRAL DOCUMENT FOR MY JOURNEY, FOCUSING ON...
-
-        <script>
-            function toggleRotationAndInvert() {
-                document.body.classList.toggle('rotated');
-                document.body.classList.toggle('inverted');
-            }
-        </script>
+    <script>
+        function toggleRotation() {
+            document.body.classList.toggle('rotated');
+            document.body.classList.toggle('inverted');
+        }
+    </script>
 </body>
 </html>
