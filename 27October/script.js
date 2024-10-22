@@ -64,8 +64,7 @@ function loadAndRenderContent() {
                     <h3>MOOD</h3>
                     ${section.mood.map(m => `<p>${m}</p>`).join('')}
                     <pre><code>${section.timing}</code></pre>
-                    ${section.content.map(c => `<p>${c}</p>`).join('')}
-                    ${section.broll ? `<div class="broll"><p>${section.broll}</p></div>` : ''}
+                    ${renderSubsections(section.subsections)}
                     <div class="word-count"></div>
                 `;
                 container.appendChild(sectionElement);
@@ -73,6 +72,16 @@ function loadAndRenderContent() {
             countWordsAndEstimateTime();
         })
         .catch(error => console.error('Error loading content:', error));
+}
+
+function renderSubsections(subsections) {
+    return subsections.map(subsection => `
+        <div class="subsection">
+            <h4>${subsection.subtitle}</h4>
+            ${subsection.content.map(c => `<p>${c}</p>`).join('')}
+            ${subsection.voiceover ? `<p class="voiceover">${subsection.voiceover}</p>` : ''}
+        </div>
+    `).join('');
 }
 
 // Function to toggle rotation and invert colors
