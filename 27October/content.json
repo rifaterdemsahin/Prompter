@@ -42,6 +42,245 @@
         "🚢 EVERYONE IS IN THE SAME BOAT HEADING TO A BIGGER UNKNOWN"
       ],
       "broll": "B-roll: Historical footage of poverty, wars, and economic downturns. Show images of outdated teaching methods and modern workplace challenges."
+    },
+    {
+      "title": "💪💪💪💪 FLEX 💪💪💪💪",
+      "subtitle": "UNFAIR ADVANTAGE",
+      "mood": [
+        "😊 Grateful and encouraging",
+        "🔥 Enthusiastic about continued learning"
+      ],
+      "timing": "WHO",
+      "content": [
+        "👋 HEY, THIS IS ERDEM",
+        "👨‍💼 I WORK AS A CHANGE ENGINEER FOR COMPLEX AUTOMATION SYSTEMS",
+        "🎢 I HAVE BEEN THROUGH UPS AND DOWNS",
+        "💰 MADE A MILLION, AS AN IT CONTRACTOR,",
+        "💳 AND ALSO FACED UNIVERSAL CREDIT.",
+        "🌍 I HAVE LIVED IN AUTOCRATIC AS WELL AS DEMOCRATIC COUNTRIES. I HAVE LIVED IN 10 CITIES, WORKED ON 5 CONTINENTS, AND LEARNED HOW TO LEVERAGE MY SKILLS.",
+        "🏠 CURRENTLY, I LIVE IN THE UK AND AM AN ACTIVE IMMIGRANT WHO IS READY TO BE BROKEN",
+        "🛣️ CONTINUING MY WORK JOURNEY.",
+        "🔮 I WOULD SHOW YOU HOW TO ESCAPE THIS REALITY AND SET ONE FOR YOURSELF"
+      ],
+      "broll": "B-roll: Show images of Erdem working in different countries, contrasting shots of success and struggle, and visuals of complex automation systems."
+    },
+    {
+      "title": "🛠️ SOLUTION",
+      "mood": [
+        "😊 Grateful and encouraging",
+        "🔥 Enthusiastic about continued learning"
+      ],
+      "timing": "HOW",
+      "content": [
+        "🎯 GOAL: WE WILL FIRST FOCUS ON IDENTIFYING THE ERRORS AS OUR MAIN GOAL.",
+        "📋 SECOND: WE HAVE AI BASED FRAMEWORK.",
+        "🔄 THIRD: WE ITERATE THROUGH THE PROCESS.",
+        "💎 VALUE: I WOULD TAKE YOU TO MY WEEK WHERE I HAVE GONE THROUGH THIS PROCESS"
+      ],
+      "broll": "B-roll: Visualize the three-step process with animated graphics. Show a calendar highlighting a week of problem-solving activities."
+    },
+    {
+      "title": "🎬 Act I",
+      "mood": [
+        "😊 Grateful and encouraging",
+        "🔥 Enthusiastic about continued learning"
+      ],
+      "timing": "HOW SETUP",
+      "subsections": [
+        {
+          "subtitle": "TELL",
+          "content": [
+            "😰 NO ONE LIKES ERRORS, AND WE GET STRESSED ABOUT THEM.",
+            "🔄 BUT WE NEED TO CHANGE HOW WE VIEW ERRORS.",
+            "🏃‍♂️ YES, WE NEED TO RUN TOWARDS THEM BECAUSE THEY ARE THE MAIN OBSTACLES IN OUR MINDS.",
+            "🆘 IN THE NEXT SECTION, I WILL SHOW YOU HOW YOU CAN GET HELP.",
+            "🚀 IF YOU HAVE STARTED ANY WORK, THAT'S YOUR MAIN PIVOT POINT. AS A PROBLEM-ORIENTED PERSON, I PREFER TO DOCUMENT IT RATHER THAN JUMPING TO THE NEXT PROBLEM.",
+            "💎 VALUE: learn converge and diverge points"
+          ]
+        },
+        {
+          "subtitle": "SHOW",
+          "content": [
+            "🖼️ HERE IS WHERE I GOT STUCK ON THE PROMETHUES DATA SOURCE THAT I AM STUCK",
+            "🖼️ IN 10 STEPS IT WORKED",
+            "🖼️ IN 30 STEPS I GOT STUCK",
+            "🖼️ IN 70 STEPS I GOT CONNECTED",
+            "🖼️ IN 90 STEPS PAIRED AND SAW THE PROMETHEUS METRICS"
+          ]
+        },
+        {
+          "subtitle": "DO",
+          "content": [
+            "Voice-over: Now, let's take action. Create a basic GitHub repo and start working from there. Remember, with GPT, you're not limited to coding tasks - you can tackle real-world problems too. Setting up the correct environment is crucial for success."
+          ]
+        },
+        {
+          "subtitle": "APPLY",
+          "content": [
+            "Voice-over: It's your turn to apply what you've learned. If you're in IT, open your repo and start working. Don't forget to add your progress in the comments - I'll be there to provide feedback along with others in our community."
+          ]
+        }
+      ],
+      "broll": "B-roll: Show screen recordings of setting up a GitHub repo, working through the Prometheus data source steps, and examples of real-world applications of GPT."
+    },
+    {
+      "title": "🎥 Act II",
+      "mood": [
+        "😊 Grateful and encouraging",
+        "🔥 Enthusiastic about continued learning"
+      ],
+      "timing": "HOW CLIMAX",
+      "subsections": [
+        {
+          "subtitle": "TELL",
+          "content": [
+            "🛠️ THE NEXT STAGE IS HAVING A FRAMEWORK, WHICH I SHARED IN PREVIOUS VIDEOS.",
+            "👶 LET'S LOOK AT THE 7 BABY STEPS FOR YOU TO LEARN USING LACAN'S TRIAD IN THE SELF-LEARNING PROCESS.",
+            "🌟 EVERYTHING STARTS WITH THE \"REAL\" STAGE, WHERE I CREATE A FOLDER FOR IT.",
+            "🔄 AFTER THAT, I REALIZE EVERYTHING IS CREATED IN AN ENVIRONMENT THAT COUNTERBALANCES THE SYMBOLS WE LEARN.",
+            "🔀 WE EITHER CHANGE THE SYMBOLS OR THE ENVIRONMENT.",
+            "🖼️ THEN WE MOVE ON TO THE \"IMAGINARY\" STAGE, WHERE I TAKE A SCREENSHOT OF EVERYTHING I LEARN AND DOCUMENT IT.",
+            "🤖 WHEN I MOVE INTO THE SYMBOLS STAGE, I USE GPT TO FORMULATE THE THINGS I NEED, AND THEY GO INTO THE MARKDOWN FILES.",
+            "🗺️ AFTER THE MARKDOWN FILES, WE DRAW A MAP AND PLACE ALL THE SYMBOLS. BEFORE ANY WORK STARTS, WE MUST KNOW THE LOCATION AND DIRECTION OF OUR SYMBOLS.",
+            "🐛 THEN IT'S TIME TO FIND THE ERRORS AND DOCUMENT THEM.",
+            "📊 WHILE ALL OF THIS HAPPENS, I INDEX ALL THE ACTIONS AND KEEP ONE CENTRAL DOCUMENT FOR MY JOURNEY, FOCUSING ON IMPROVING IT FASTER AND BETTER WITH EACH ITERATION.",
+            "💡 SO, TO LEVERAGE ERRORS, I USE THE FRAMEWORK AND DOCUMENT THEM IN THE MOST AI-FRIENDLY PLACE, WHICH IS GIT."
+          ]
+        },
+        {
+          "subtitle": "SHOW",
+          "content": [
+            "📊 HERE IS THE FOLDER STRUCTURE I HAVE CREATED FOR MYSELF",
+            "📊 THIS ALSO EVOLVES WITH TIME",
+            "📊 FEEL THE ACTION EVERYTHIME I MOVE ONE STEP FORWARD AND USE THE NUMBER AS AN INDEX FOR ME TO FOLLOW",
+            "📊 I DO HAVE LITTLE CHEATS FOR MYSELF TO FOLLOW LIKE THE INDEX AND PRACTICAL PUSH",
+            "💎 VALUE: THIS IS AN INFINITE GAME PLAY WITH DIFFERENT STAGES LEARN IMPLEMENT PRODUCE"
+          ]
+        },
+        {
+          "subtitle": "DO",
+          "content": [
+            "Voice-over: Now it's time for action. Your exercise is to create a folder structure for your current project following the \"Real,\" \"Imaginary,\" and \"Symbols\" stages we just discussed. This structure will be the foundation of your learning process."
+          ]
+        },
+        {
+          "subtitle": "APPLY",
+          "content": [
+            "Voice-over: Take what you've learned and apply it immediately. Start documenting your learning process and any errors you encounter in your newly created folder structure. This practice will help you organize your thoughts and track your progress effectively."
+          ]
+        }
+      ],
+      "broll": "B-roll: Demonstrate the creation of the folder structure on screen. Show examples of documenting the learning process and errors in each stage."
+    },
+    {
+      "title": "🎭 Act III",
+      "mood": [
+        "😊 Grateful and encouraging",
+        "🔥 Enthusiastic about continued learning"
+      ],
+      "timing": "DIVIDE AND CONQUER",
+      "subsections": [
+        {
+          "subtitle": "TELL",
+          "content": [
+            "🧩 Divide and conquer is a powerful problem-solving strategy.",
+            "🔍 It involves breaking down complex issues into smaller, manageable parts.",
+            "🎯 Each part can then be tackled individually, making the overall task less daunting."
+          ]
+        },
+        {
+          "subtitle": "SHOW",
+          "content": [
+            "📊 Here's how to apply divide and conquer using emojis:",
+            "1️⃣ 🔪 Slice the problem into smaller pieces",
+            "2️⃣ 🏷️ Label each piece with a relevant emoji",
+            "3️⃣ 🔢 Prioritize the pieces",
+            "4️⃣ 🛠️ Tackle each piece one by one",
+            "5️⃣ 🧠 Solve sub-problems",
+            "6️⃣ 🔗 Combine solutions",
+            "7️⃣ 🎉 Celebrate your progress!"
+          ]
+        },
+        {
+          "subtitle": "DO",
+          "content": [
+            "Voice-over: It's time to put this method into practice. Take a current problem you're facing and divide it using emojis. This visual approach will help you see your problem in a new light and make it more manageable."
+          ]
+        },
+        {
+          "subtitle": "APPLY",
+          "content": [
+            "Voice-over: Now, let's apply this method to your real-life projects and tasks. Start breaking down your complex problems using the divide and conquer approach. Remember to track your progress and observe how this method improves your productivity over time."
+          ]
+        }
+      ],
+      "broll": "B-roll: Visualize the divide and conquer process with animated graphics. Show examples of complex problems being broken down into manageable parts using emojis."
+    },
+    {
+      "title": "🙏 Thanks & Further Learning",
+      "mood": [
+        "😊 Grateful and encouraging",
+        "🔥 Enthusiastic about continued learning"
+      ],
+      "subsections": [
+        {
+          "subtitle": "TELL",
+          "content": [
+            "🌟 Your journey doesn't end here! There's always more to learn and explore.",
+            "📚 We've prepared additional resources to help you continue your self-learning journey."
+          ]
+        },
+        {
+          "subtitle": "SHOW",
+          "content": [
+            "🎥 Check out these related videos from our channel:",
+            "- CV as Code: Revolutionize Your Resume",
+            "- Mastering Divide and Conquer in Programming",
+            "- Emoji-Driven Problem Solving Techniques"
+          ]
+        },
+        {
+          "subtitle": "DO",
+          "content": [
+            "Voice-over: Now it's time for you to take action. Choose one of the video links we've provided and watch it. This will help reinforce what you've learned today and expand your knowledge even further."
+          ]
+        },
+        {
+          "subtitle": "APPLY",
+          "content": [
+            "Voice-over: After watching the video, it's crucial to apply what you've learned. Try to integrate the new concepts from the video into your current project or learning goals. Take a moment to document your insights and create a plan for how you'll use these new ideas in your work."
+          ]
+        }
+      ],
+      "broll": "B-roll: Show snippets from the recommended videos. Display examples of people applying concepts from these videos in real-world scenarios."
+    },
+    {
+      "title": "🔄 Prompts for Updating Sections",
+      "mood": [
+        "🧠 Analytical and helpful",
+        "🔧 Ready to assist with updates"
+      ],
+      "subsections": [
+        {
+          "subtitle": "TELL",
+          "content": [
+            "To keep this content fresh and relevant, you can use these prompts to update each section:"
+          ]
+        },
+        {
+          "subtitle": "SHOW",
+          "content": [
+            "🎯 Introduction: \"Update the introduction to reflect the latest trends in [topic].\"",
+            "🧩 Problem Statement: \"Revise the problem statement to address [new challenge] in [field].\"",
+            "💡 Solution Overview: \"Enhance the solution overview with recent developments in [area].\"",
+            "🔍 Detailed Explanation: \"Expand the detailed explanation to include [new concept or technique].\"",
+            "📊 Examples: \"Add a new example demonstrating [specific application] of divide and conquer.\"",
+            "🛠️ Implementation: \"Update the implementation section with best practices for [programming language or framework].\"",
+            "📈 Benefits and Applications: \"Include new benefits or applications of divide and conquer in [industry or field].\"",
+            "🙏 Thanks & Further Learning: \"Refresh the resources with the latest videos, articles, or courses on divide and conquer techniques.\""
+          ]
+        }
+      ]
     }
   ]
 }
