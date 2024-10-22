@@ -167,13 +167,19 @@
         // Function to count words and estimate narration time
         function countWordsAndEstimateTime() {
             const sections = document.querySelectorAll('.section');
+            let totalWords = 0;
+            let totalTime = 0;
             sections.forEach((section) => {
                 const text = section.innerText;
                 const wordCount = text.trim().split(/\s+/).length;
                 const timeToNarrate = Math.ceil(wordCount / 150); // Assuming 150 words per minute
+                totalWords += wordCount;
+                totalTime += timeToNarrate;
                 const wordCountElement = section.querySelector('.word-count');
                 wordCountElement.textContent = `Word count: ${wordCount} | Estimated narration time: ${timeToNarrate} minute${timeToNarrate !== 1 ? 's' : ''}`;
             });
+            const totalNarrationTimeElement = document.getElementById('total-narration-time');
+            totalNarrationTimeElement.textContent = `Total word count: ${totalWords} | Total estimated narration time: ${totalTime} minute${totalTime !== 1 ? 's' : ''}`;
         }
 
         // New function to load and render content
@@ -221,35 +227,7 @@
         // Call loadAndRenderContent when the page loads
         window.onload = function() {
             loadAndRenderContent();
-            moveWordCounterToHeader();
             // ... (keep other onload functions) ...
-
-            function moveWordCounterToHeader() {
-                const header = document.querySelector('header');
-                if (!header) {
-                    console.error('Header not found');
-                    return;
-                }
-                const wordCountElement = document.createElement('div');
-                wordCountElement.id = 'header-word-count';
-                header.appendChild(wordCountElement);
-                
-                const observer = new MutationObserver(() => {
-                    const wordCounts = document.querySelectorAll('.word-count');
-                    let totalWords = 0;
-                    let totalTime = 0;
-                    wordCounts.forEach(wc => {
-                        const text = wc.textContent;
-                        const words = parseInt(text.match(/Word count: (\d+)/)[1]);
-                        const time = parseInt(text.match(/Estimated narration time: (\d+)/)[1]);
-                        totalWords += words;
-                        totalTime += time;
-                    });
-                    wordCountElement.textContent = `Total word count: ${totalWords} | Total estimated narration time: ${totalTime} minute${totalTime !== 1 ? 's' : ''}`;
-                });
-                
-                observer.observe(document.getElementById('content-container'), { subtree: true, childList: true });
-            }
         };
     </script>
 </body>
