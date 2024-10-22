@@ -1,0 +1,48 @@
+{
+  "sections": [
+    {
+      "title": "💪 PAIN AND GAIN",
+      "mood": [
+        "😊 Grateful and encouraging",
+        "🔥 Enthusiastic about continued learning"
+      ],
+      "timing": "PRESENT",
+      "content": [
+        "😟 CAN'T SOLVE YOUR PROBLEMS?",
+        "😰 FEELING STRESSED?",
+        "🤔 WHAT IF I TOLD YOU THERE'S A WAY TO LEVERAGE THEM...",
+        "⏱️ IN LESS THAN 8 MINUTES, I WILL GO OVER THIS.",
+        "🌍 THE WORLD IS TRANSFORMING AT A RAPID PACE.",
+        "💼 WITH JOBS SHIFTING LEFT AND RIGHT,",
+        "📉 PEOPLE ARE GETTING LAID OFF, AND EVERYONE IS AFFECTED.",
+        "🔄 THE SKILLS NEEDED ARE CHANGING FOR EVERYONE.",
+        "💎 VALUE: POVERTY IS THE MAIN ISSUE"
+      ],
+      "broll": "B-roll: Show images of people looking stressed at work, unemployment lines, and rapidly changing technology."
+    },
+    {
+      "title": "🚨 🚨 🚨 PROBLEM 🚨 🚨 🚨",
+      "mood": [
+        "😊 Grateful and encouraging",
+        "🔥 Enthusiastic about continued learning"
+      ],
+      "timing": "PAST",
+      "content": [
+        "💸 WE HAVE SEEN POVERTY.",
+        "💥 WE HAVE SEEN WARS.",
+        "📉 WE HAVE EXPERIENCED TIMES WHEN WE WERE NOT ADVANCED OR PROGRESSING.",
+        "⚠️ CHAOS ALWAYS TOOK OVER.",
+        "🚫 WE WERE TAUGHT TO AVOID AND OVERLOOK ERRORS WHENEVER WE ENCOUNTERED THEM.",
+        "🔄 THE WAY WE WERE TAUGHT NO LONGER SUFFICES, AS THE REQUIRED SKILLS ARE CONSTANTLY EVOLVING.",
+        "🎓 LECTURES AND MEETINGS ARE NOT CUTTING IT, EVERYONE SEES IT",
+        "🛠️ PROJECTS REQUIRE HANDS-ON EXPERIENCE AND THERE ARE EXPECTED SKILLS GAPS",
+        "🌐 CALL IT GREAT RESET, CALL IT X, THE WORLD IS CHANGING FASTER THAN EVER",
+        "💼 CHANGE OF SKILLS AND JOBS ARE FACING US RIGHT NOW",
+        "🧠 HEADING TO A MAJOR HEALTH CRISIS IN MENTAL HEALTH",
+        "🚢 EVERYONE IS IN THE SAME BOAT HEADING TO A BIGGER UNKNOWN"
+      ],
+      "broll": "B-roll: Historical footage of poverty, wars, and economic downturns. Show images of outdated teaching methods and modern workplace challenges."
+    }
+    // ... Add the rest of the sections here ...
+  ]
+}
