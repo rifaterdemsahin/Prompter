@@ -220,7 +220,35 @@
         // Call loadAndRenderContent when the page loads
         window.onload = function() {
             loadAndRenderContent();
+            moveWordCounterToHeader();
             // ... (keep other onload functions) ...
+
+            function moveWordCounterToHeader() {
+                const header = document.querySelector('header');
+                if (!header) {
+                    console.error('Header not found');
+                    return;
+                }
+                const wordCountElement = document.createElement('div');
+                wordCountElement.id = 'header-word-count';
+                header.appendChild(wordCountElement);
+                
+                const observer = new MutationObserver(() => {
+                    const wordCounts = document.querySelectorAll('.word-count');
+                    let totalWords = 0;
+                    let totalTime = 0;
+                    wordCounts.forEach(wc => {
+                        const text = wc.textContent;
+                        const words = parseInt(text.match(/Word count: (\d+)/)[1]);
+                        const time = parseInt(text.match(/Estimated narration time: (\d+)/)[1]);
+                        totalWords += words;
+                        totalTime += time;
+                    });
+                    wordCountElement.textContent = `Total word count: ${totalWords} | Total estimated narration time: ${totalTime} minute${totalTime !== 1 ? 's' : ''}`;
+                });
+                
+                observer.observe(document.getElementById('content-container'), { subtree: true, childList: true });
+            }
         };
     </script>
 </body>
