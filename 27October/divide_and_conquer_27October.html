@@ -22,6 +22,11 @@
             transform: scaleX(-1);
         }
 
+        .inverted {
+            background-color: black;
+            color: white;
+        }
+
         .centered {
             width: 33%;
             margin: 0 auto;
@@ -75,10 +80,17 @@
 </head>
 <body>
     <div class="centered">
+        <h1>🚀 PROMPT HELPER</h1>
+        <button onclick="toggleRotation()">Toggle Rotation & Invert Colors</button>
+        <button onclick="increaseFontSize()">Increase Font Size</button>
         <button onclick="location.reload(true)">Refresh Page</button>
         <p id="version"></p>
         <button onclick="toggleBoldText()">Toggle Bold Text</button>
         <button onclick="toggleMirror()">Toggle Rotation</button>
+
+        <hr>
+
+        <h2>💪 Pain and Gain</h2>
 
         <div id="content-container">
             <!-- Content will be dynamically inserted here -->
@@ -157,6 +169,23 @@
                     countWordsAndEstimateTime();
                 })
                 .catch(error => console.error('Error loading content:', error));
+        }
+
+        // Function to toggle rotation and invert colors
+        function toggleRotation() {
+            const centeredDiv = document.querySelector('.centered');
+            centeredDiv.classList.toggle('mirrored');
+            document.body.classList.toggle('inverted');
+        }
+
+        // Function to increase font size
+        function increaseFontSize() {
+            const elements = document.querySelectorAll('.centered, .centered *');
+            elements.forEach(element => {
+                const currentSize = window.getComputedStyle(element).fontSize;
+                const newSize = parseFloat(currentSize) + 2;
+                element.style.fontSize = newSize + 'px';
+            });
         }
 
         // Call loadAndRenderContent when the page loads
