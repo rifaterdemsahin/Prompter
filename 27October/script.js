@@ -45,9 +45,19 @@ function countWordsAndEstimateTime() {
         totalTime += timeToNarrate;
         const wordCountElement = section.querySelector('.word-count');
         wordCountElement.textContent = `Word count: ${wordCount} | Estimated narration time: ${timeToNarrate} minute${timeToNarrate !== 1 ? 's' : ''}`;
+        
+        // Reset animation
+        wordCountElement.style.animation = 'none';
+        wordCountElement.offsetHeight; // Trigger reflow
+        wordCountElement.style.animation = null;
     });
     const totalNarrationTimeElement = document.getElementById('total-narration-time');
     totalNarrationTimeElement.textContent = `Total word count: ${totalWords} | Total estimated narration time: ${totalTime} minute${totalTime !== 1 ? 's' : ''}`;
+    
+    // Reset animation for total narration time
+    totalNarrationTimeElement.style.animation = 'none';
+    totalNarrationTimeElement.offsetHeight; // Trigger reflow
+    totalNarrationTimeElement.style.animation = null;
 }
 
 // Function to load and render content
@@ -56,6 +66,7 @@ function loadAndRenderContent() {
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('content-container');
+            container.innerHTML = ''; // Clear existing content
             data.sections.forEach((section, index) => {
                 const sectionElement = document.createElement('div');
                 sectionElement.className = `section section-${index + 1}`;
@@ -102,8 +113,19 @@ function increaseFontSize() {
     });
 }
 
+// Add a new function to refresh content
+function refreshContent() {
+    loadAndRenderContent();
+}
+
 // Call loadAndRenderContent when the page loads
 window.onload = function() {
     loadAndRenderContent();
     cacheBust();
+    
+    // Add refresh button functionality
+    const refreshButton = document.createElement('button');
+    refreshButton.textContent = 'Refresh Content';
+    refreshButton.onclick = refreshContent;
+    document.querySelector('.centered').insertBefore(refreshButton, document.querySelector('hr'));
 };

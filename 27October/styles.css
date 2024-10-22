@@ -67,17 +67,32 @@ button {
 .section-8 { background-color: #331a4d; }
 .section-9 { background-color: #1a3d4d; }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .word-count {
     font-size: 1.2em;
     font-style: italic;
     margin-top: 10px;
-    animation: flicker 1s infinite;
+    animation: fadeInUp 0.5s ease-out;
 }
 
-@keyframes flicker {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
+#total-narration-time {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    animation: fadeInUp 0.5s ease-out;
 }
 
 .broll {
