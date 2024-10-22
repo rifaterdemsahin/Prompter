@@ -82,9 +82,16 @@
         .section-9 { background-color: #1a3d4d; } /* Dark Teal */
 
         .word-count {
-            font-size: 0.9em;
+            font-size: 1.2em;
             font-style: italic;
             margin-top: 10px;
+            animation: flicker 1s infinite;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
 
         .broll {
