@@ -50,6 +50,12 @@
         .section-4 { background-color: #4d4d1a; } /* Dark Yellow */
         .section-5 { background-color: #4d1a4d; } /* Dark Purple */
         .section-6 { background-color: #1a4d4d; } /* Dark Cyan */
+
+        .word-count {
+            font-size: 0.9em;
+            font-style: italic;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -73,6 +79,7 @@ PRESENT
             <p>📉 PEOPLE ARE GETTING LAID OFF, AND EVERYONE IS AFFECTED.</p>
             <p>🔄 THE SKILLS NEEDED ARE CHANGING FOR EVERYONE.</p>
             <p>💎 VALUE: POVERTY IS THE MAIN ISSUE</p>
+            <div class="word-count"></div>
         </div>
 
         <div class="section section-2">
@@ -92,6 +99,7 @@ PAST
             <p>💼 CHANGE OF SKILLS AND JOBS ARE FACING US RIGHT NOW</p>
             <p>🧠 HEADING TO A MAJOR HEALTH CRISIS IN MENTAL HEALTH</p>
             <p>🚢 EVERYONE IS IN THE SAME BOAT HEADING TO A BIGGER UNKNOWN</p>
+            <div class="word-count"></div>
         </div>
 
         <div class="section section-3">
@@ -108,6 +116,7 @@ PAST
             <p>🏠 CURRENTLY, I LIVE IN THE UK AND AM AN ACTIVE IMMIGRANT WHO IS READY TO BE BROKEN</p>
             <p>🛣️ CONTINUING MY WORK JOURNEY.</p>
             <p>🔮 I WOULD SHOW YOU HOW TO ESCAPE THIS REALITY AND SET ONE FOR YOURSELF </p>
+            <div class="word-count"></div>
         </div>
 
         <div class="section section-4">
@@ -119,6 +128,7 @@ PAST
             <p>🔄 THIRD: WE ITERATE THROUGH THE PROCESS.</p>
             <p>💎 VALUE: I WOULD TAKE YOU TO MY WEEK WHERE I HAVE GONE THROUGH THIS PROCESS</p>
             <hr>
+            <div class="word-count"></div>
         </div>
 
         <div class="section section-5">
@@ -150,6 +160,7 @@ PAST
             <p>💬 ADD IT IN THE COMMENTS, I WOULD CHECK AND GIVE FEEDBACK WITH OTHERS</p>
 
             <hr>
+            <div class="word-count"></div>
         </div>
 
         <div class="section section-6">
@@ -184,6 +195,7 @@ PAST
             <p>🔄 Start documenting your learning process and errors in your newly created folder structure.</p>
 
             <hr>
+            <div class="word-count"></div>
         </div>
 
         <!-- Add more sections as needed -->
@@ -226,6 +238,21 @@ PAST
         }
 
         cacheBust(); // Apply cache-busting
+
+        // Function to count words and estimate narration time
+        function countWordsAndEstimateTime() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section) => {
+                const text = section.innerText;
+                const wordCount = text.trim().split(/\s+/).length;
+                const timeToNarrate = Math.ceil(wordCount / 150); // Assuming 150 words per minute
+                const wordCountElement = section.querySelector('.word-count');
+                wordCountElement.textContent = `Word count: ${wordCount} | Estimated narration time: ${timeToNarrate} minute${timeToNarrate !== 1 ? 's' : ''}`;
+            });
+        }
+
+        // Call the function when the page loads
+        window.onload = countWordsAndEstimateTime;
     </script>
 </body>
 </html>
