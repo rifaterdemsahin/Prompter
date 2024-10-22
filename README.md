@@ -34,3 +34,4 @@ For quick updates and commits, use the following command:
 git pull; git add . && git commit -m "Refine task priorities in kanban board" && git push
 ```
 
+Sample Page > https://rifaterdemsahin.github.io/Prompter/27October/divide_and_conquer_27October.html
