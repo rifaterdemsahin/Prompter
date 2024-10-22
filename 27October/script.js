@@ -80,6 +80,7 @@ function renderSubsections(subsections) {
             <h4>${subsection.subtitle}</h4>
             ${subsection.content.map(c => `<p>${c}</p>`).join('')}
             ${subsection.voiceover ? `<p class="voiceover">${subsection.voiceover}</p>` : ''}
+            ${subsection.quote ? `<blockquote class="famous-quote">${subsection.quote}</blockquote>` : ''}
         </div>
     `).join('');
 }

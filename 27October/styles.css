@@ -107,3 +107,13 @@ button {
     margin-top: 0;
     color: #ffd700;
 }
+
+.famous-quote {
+    font-style: italic;
+    color: #4CAF50;
+    border-left: 4px solid #4CAF50;
+    padding-left: 10px;
+    margin: 15px 0;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 0 5px 5px 0;
+}
