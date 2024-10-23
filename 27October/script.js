@@ -51,13 +51,16 @@ const resetAnimation = (element) => {
     element.style.animation = null;
 };
 
+// New function to capitalize text
+const capitalize = (text) => text.toUpperCase();
+
 // Render subsections
 const renderSubsections = (subsections) => subsections.map(subsection => `
     <div class="subsection">
-        <h4>${getSubsectionEmoji(subsection.subtitle)} ${subsection.subtitle}</h4>
-        ${subsection.content.map(c => `<p>${c}</p>`).join('')}
-        ${subsection.voiceover ? `<p class="voiceover">${subsection.voiceover}</p>` : ''}
-        ${subsection.quote ? `<blockquote class="famous-quote">${subsection.quote}</blockquote>` : ''}
+        <h4>${getSubsectionEmoji(subsection.subtitle)} ${capitalize(subsection.subtitle)}</h4>
+        ${subsection.content.map(c => `<p>${capitalize(c)}</p>`).join('')}
+        ${subsection.voiceover ? `<p class="voiceover">${capitalize(subsection.voiceover)}</p>` : ''}
+        ${subsection.quote ? `<blockquote class="famous-quote">${capitalize(subsection.quote)}</blockquote>` : ''}
     </div>
 `).join('');
 
@@ -80,13 +83,13 @@ const loadAndRenderContent = () => {
             const container = $('#content-container');
             container.innerHTML = data.sections.map((section, index) => `
                 <div class="section section-${index + 1}">
-                    <h2>${section.title}</h2>
+                    <h2>${capitalize(section.title)}</h2>
                     <div class="word-count"></div>
-                    <h3>MOOD</h3>
-                    ${section.mood.map(m => `<p>${m}</p>`).join('')}
-                    <pre><code>${section.timing}</code></pre>
+                    <h3>${capitalize('MOOD')}</h3>
+                    ${section.mood.map(m => `<p>${capitalize(m)}</p>`).join('')}
+                    <pre><code>${capitalize(section.timing)}</code></pre>
                     ${renderSubsections(section.subsections)}
-                    <button class="edit-button" onclick="editSection(${index})">Edit Section</button>
+                    <button class="edit-button" onclick="editSection(${index})">${capitalize('Edit Section')}</button>
                 </div>
             `).join('');
             countWordsAndEstimateTime();
@@ -109,23 +112,23 @@ const editSection = (index) => {
 
 // Create edit form
 const createEditForm = (section, index) => `
-    <h2><input type="text" id="title-${index}" value="${section.title}"></h2>
-    <h3>MOOD</h3>
-    ${section.mood.map((m, i) => `<input type="text" id="mood-${index}-${i}" value="${m}">`).join('<br>')}
-    <h3>TIMING</h3>
-    <input type="text" id="timing-${index}" value="${section.timing}">
+    <h2><input type="text" id="title-${index}" value="${capitalize(section.title)}"></h2>
+    <h3>${capitalize('MOOD')}</h3>
+    ${section.mood.map((m, i) => `<input type="text" id="mood-${index}-${i}" value="${capitalize(m)}">`).join('<br>')}
+    <h3>${capitalize('TIMING')}</h3>
+    <input type="text" id="timing-${index}" value="${capitalize(section.timing)}">
     ${section.subsections.map((subsection, subIndex) => `
         <div class="subsection-edit">
-            <h4>${subsection.subtitle}</h4>
+            <h4>${capitalize(subsection.subtitle)}</h4>
             ${subsection.content.map((c, contentIndex) => `
-                <textarea id="content-${index}-${subIndex}-${contentIndex}">${c}</textarea>
+                <textarea id="content-${index}-${subIndex}-${contentIndex}">${capitalize(c)}</textarea>
             `).join('')}
-            ${subsection.voiceover ? `<textarea id="voiceover-${index}-${subIndex}">${subsection.voiceover}</textarea>` : ''}
-            ${subsection.quote ? `<textarea id="quote-${index}-${subIndex}">${subsection.quote}</textarea>` : ''}
+            ${subsection.voiceover ? `<textarea id="voiceover-${index}-${subIndex}">${capitalize(subsection.voiceover)}</textarea>` : ''}
+            ${subsection.quote ? `<textarea id="quote-${index}-${subIndex}">${capitalize(subsection.quote)}</textarea>` : ''}
         </div>
     `).join('')}
-    <button onclick="saveSection(${index})">Save Section</button>
-    <button onclick="loadAndRenderContent()">Cancel</button>
+    <button onclick="saveSection(${index})">${capitalize('Save Section')}</button>
+    <button onclick="loadAndRenderContent()">${capitalize('Cancel')}</button>
 `;
 
 // Save section
@@ -165,12 +168,12 @@ const increaseFontSize = () => {
 
 // Initialize
 window.onload = () => {
-    $('#version').innerText = getVersion();
+    $('#version').innerText = capitalize(getVersion());
     loadAndRenderContent();
     cacheBust();
     
     const refreshButton = document.createElement('button');
-    refreshButton.textContent = 'Refresh Content';
+    refreshButton.textContent = capitalize('Refresh Content');
     refreshButton.onclick = loadAndRenderContent;
     $('.centered').insertBefore(refreshButton, $('hr'));
 };
