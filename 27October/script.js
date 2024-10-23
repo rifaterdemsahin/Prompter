@@ -52,17 +52,22 @@ const resetAnimation = (element) => {
 };
 
 // New function to capitalize text
-const capitalize = (text) => text.toUpperCase();
+const capitalize = (text) => {
+    return text ? text.toUpperCase() : '';
+};
 
 // Render subsections
-const renderSubsections = (subsections) => subsections.map(subsection => `
-    <div class="subsection">
-        <h4>${getSubsectionEmoji(subsection.subtitle)} ${capitalize(subsection.subtitle)}</h4>
-        ${subsection.content.map(c => `<p>${capitalize(c)}</p>`).join('')}
-        ${subsection.voiceover ? `<p class="voiceover">${capitalize(subsection.voiceover)}</p>` : ''}
-        ${subsection.quote ? `<blockquote class="famous-quote">${capitalize(subsection.quote)}</blockquote>` : ''}
-    </div>
-`).join('');
+const renderSubsections = (subsections) => {
+    if (!subsections) return '';
+    return subsections.map(subsection => `
+        <div class="subsection">
+            <h4>${getSubsectionEmoji(subsection.subtitle)} ${capitalize(subsection.subtitle)}</h4>
+            ${subsection.content ? subsection.content.map(c => `<p>${capitalize(c)}</p>`).join('') : ''}
+            ${subsection.voiceover ? `<p class="voiceover">${capitalize(subsection.voiceover)}</p>` : ''}
+            ${subsection.quote ? `<blockquote class="famous-quote">${capitalize(subsection.quote)}</blockquote>` : ''}
+        </div>
+    `).join('');
+};
 
 // Helper function to get emoji for subsection
 const getSubsectionEmoji = (subtitle) => {
@@ -128,7 +133,7 @@ const renderContent = (data) => {
             <h2>${capitalize(section.title)}</h2>
             <div class="word-count"></div>
             <h3>${capitalize('MOOD')}</h3>
-            ${section.mood.map(m => `<p>${capitalize(m)}</p>`).join('')}
+            ${section.mood ? section.mood.map(m => `<p>${capitalize(m)}</p>`).join('') : ''}
             <pre><code>${capitalize(section.timing)}</code></pre>
             ${renderSubsections(section.subsections)}
             <button class="edit-button" onclick="editSection(${index})">${capitalize('Edit Section')}</button>

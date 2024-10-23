@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROMPT HELPER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Disable caching -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body>
+    <div class="centered">
+        <h1>🚀 PROMPT HELPER</h1>
+        <button onclick="toggleRotation()">Toggle Rotation & Invert Colors</button>
+        <button onclick="increaseFontSize()">Increase Font Size</button>
+        <button onclick="location.reload(true)">Refresh Page</button>
+        <p id="version"></p>
+        <button onclick="toggleBoldText()">Toggle Bold Text</button>
+        <button onclick="toggleMirror()">Toggle Rotation</button>
+
+        <hr>
+
+        <h2>💪 THIS WEEKS VIDEO</h2>
+        <div id="total-narration-time"></div>
+        <div id="section-narration-times"></div>
+
+        <div id="content-container">
+            <!-- Content will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
