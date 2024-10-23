@@ -80,22 +80,62 @@ const loadAndRenderContent = () => {
     fetch('content.json')
         .then(response => response.json())
         .then(data => {
-            const container = $('#content-container');
-            container.innerHTML = data.sections.map((section, index) => `
-                <div class="section section-${index + 1}">
-                    <h2>${capitalize(section.title)}</h2>
-                    <div class="word-count"></div>
-                    <h3>${capitalize('MOOD')}</h3>
-                    ${section.mood.map(m => `<p>${capitalize(m)}</p>`).join('')}
-                    <pre><code>${capitalize(section.timing)}</code></pre>
-                    ${renderSubsections(section.subsections)}
-                    <button class="edit-button" onclick="editSection(${index})">${capitalize('Edit Section')}</button>
-                </div>
-            `).join('');
-            countWordsAndEstimateTime();
-            $('#version').innerText = capitalize(`Version: ${data.version || getVersion()}`);
+            renderContent(data);
         })
-        .catch(error => console.error('Error loading content:', error));
+        .catch(error => {
+            console.error('Error loading content:', error);
+            // Fallback to a default content structure
+            const defaultContent = {
+                version: getVersion(),
+                sections: [
+                    {
+                        title: "DEFAULT SECTION",
+                        mood: ["Default mood"],
+                        timing: "PRESENT",
+                        subsections: [
+                            {
+                                subtitle: "TELL",
+                                content: ["Default content"]
+                            },
+                            {
+                                subtitle: "SHOW",
+                                content: ["Default content"]
+                            },
+                            {
+                                subtitle: "DO",
+                                content: ["Default content"],
+                                voiceover: "Default voiceover"
+                            },
+                            {
+                                subtitle: "APPLY",
+                                content: ["Default content"],
+                                quote: "Default quote"
+                            }
+                        ]
+                    }
+                ]
+            };
+            renderContent(defaultContent);
+            alert("Failed to load content.json. Using default content.");
+        });
+};
+
+// New function to render content
+const renderContent = (data) => {
+    const container = $('#content-container');
+    container.innerHTML = data.sections.map((section, index) => `
+        <div class="section section-${index + 1}">
+            <h2>${capitalize(section.title)}</h2>
+            <div class="word-count"></div>
+            <h3>${capitalize('MOOD')}</h3>
+            ${section.mood.map(m => `<p>${capitalize(m)}</p>`).join('')}
+            <pre><code>${capitalize(section.timing)}</code></pre>
+            ${renderSubsections(section.subsections)}
+            <button class="edit-button" onclick="editSection(${index})">${capitalize('Edit Section')}</button>
+        </div>
+    `).join('');
+    countWordsAndEstimateTime();
+    $('#version').innerText = capitalize(`Version: ${data.version || getVersion()}`);
 };
 
 // Edit section
