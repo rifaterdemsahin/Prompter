@@ -54,12 +54,23 @@ const resetAnimation = (element) => {
 // Render subsections
 const renderSubsections = (subsections) => subsections.map(subsection => `
     <div class="subsection">
-        <h4>${subsection.subtitle}</h4>
+        <h4>${getSubsectionEmoji(subsection.subtitle)} ${subsection.subtitle}</h4>
         ${subsection.content.map(c => `<p>${c}</p>`).join('')}
         ${subsection.voiceover ? `<p class="voiceover">${subsection.voiceover}</p>` : ''}
         ${subsection.quote ? `<blockquote class="famous-quote">${subsection.quote}</blockquote>` : ''}
     </div>
 `).join('');
+
+// Helper function to get emoji for subsection
+const getSubsectionEmoji = (subtitle) => {
+    switch (subtitle.toUpperCase()) {
+        case 'TELL': return '🗣️';
+        case 'SHOW': return '👀';
+        case 'DO': return '🛠️';
+        case 'APPLY': return '🚀';
+        default: return '';
+    }
+};
 
 // Load and render content
 const loadAndRenderContent = () => {
