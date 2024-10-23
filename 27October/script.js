@@ -36,11 +36,11 @@ const countWordsAndEstimateTime = () => {
         totalWords += wordCount;
         totalTime += timeToNarrate;
         const wordCountElement = section.querySelector('.word-count');
-        wordCountElement.textContent = `Word count: ${wordCount} | Estimated narration time: ${timeToNarrate} minute${timeToNarrate !== 1 ? 's' : ''}`;
+        wordCountElement.textContent = `📊 Word count: ${wordCount} | ⏱️ Estimated narration time: ${timeToNarrate} minute${timeToNarrate !== 1 ? 's' : ''}`;
         resetAnimation(wordCountElement);
     });
     const totalNarrationTimeElement = $('#total-narration-time');
-    totalNarrationTimeElement.textContent = `Total word count: ${totalWords} | Total estimated narration time: ${totalTime} minute${totalTime !== 1 ? 's' : ''}`;
+    totalNarrationTimeElement.innerHTML = `<strong>📚 Total word count: ${totalWords} | 🕰️ Total estimated narration time: ${totalTime} minute${totalTime !== 1 ? 's' : ''}</strong>`;
     resetAnimation(totalNarrationTimeElement);
 };
 
@@ -81,11 +81,11 @@ const loadAndRenderContent = () => {
             container.innerHTML = data.sections.map((section, index) => `
                 <div class="section section-${index + 1}">
                     <h2>${section.title}</h2>
+                    <div class="word-count"></div>
                     <h3>MOOD</h3>
                     ${section.mood.map(m => `<p>${m}</p>`).join('')}
                     <pre><code>${section.timing}</code></pre>
                     ${renderSubsections(section.subsections)}
-                    <div class="word-count"></div>
                 </div>
             `).join('');
             countWordsAndEstimateTime();
