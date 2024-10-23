@@ -1,131 +1,103 @@
-// Function to toggle mirror
-function toggleMirror() {
-    document.body.classList.toggle('mirrored');
-}
+// Utility functions
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
 
-// Function to toggle bold text
-function toggleBoldText() {
-    document.body.style.fontWeight = document.body.style.fontWeight === 'bold' ? 'normal' : 'bold';
-}
+// Toggle functions
+const toggleClass = (element, className) => element.classList.toggle(className);
+const toggleMirror = () => toggleClass(document.body, 'mirrored');
+const toggleBoldText = () => document.body.style.fontWeight = document.body.style.fontWeight === 'bold' ? 'normal' : 'bold';
+const toggleRotation = () => {
+    toggleClass($('.centered'), 'mirrored');
+    toggleClass(document.body, 'inverted');
+};
 
-// Function to generate version number based on the current date
-function getVersion() {
+// Version function
+const getVersion = () => {
     const date = new Date();
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `Version: ${year}.${month}.${day}`;
-}
+    return `Version: ${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+};
 
-// Set version number on the page
-document.getElementById('version').innerText = getVersion();
-
-// Disable caching by adding a cache-busting query to all links and resources
-function cacheBust() {
-    const elements = document.querySelectorAll('link, script, img');
-    elements.forEach((element) => {
+// Cache busting
+const cacheBust = () => {
+    $$('link, script, img').forEach(element => {
         const srcAttr = element.tagName === 'LINK' ? 'href' : 'src';
         const url = element.getAttribute(srcAttr);
-        if (url) {
-            element.setAttribute(srcAttr, `${url}?v=${new Date().getTime()}`);
-        }
+        if (url) element.setAttribute(srcAttr, `${url}?v=${Date.now()}`);
     });
-}
+};
 
-// Function to count words and estimate narration time
-function countWordsAndEstimateTime() {
-    const sections = document.querySelectorAll('.section');
+// Word count and time estimation
+const countWordsAndEstimateTime = () => {
     let totalWords = 0;
     let totalTime = 0;
-    sections.forEach((section) => {
-        const text = section.innerText;
-        const wordCount = text.trim().split(/\s+/).length;
-        const timeToNarrate = Math.ceil(wordCount / 150); // Assuming 150 words per minute
+    $$('.section').forEach(section => {
+        const wordCount = section.innerText.trim().split(/\s+/).length;
+        const timeToNarrate = Math.ceil(wordCount / 150);
         totalWords += wordCount;
         totalTime += timeToNarrate;
         const wordCountElement = section.querySelector('.word-count');
         wordCountElement.textContent = `Word count: ${wordCount} | Estimated narration time: ${timeToNarrate} minute${timeToNarrate !== 1 ? 's' : ''}`;
-        
-        // Reset animation
-        wordCountElement.style.animation = 'none';
-        wordCountElement.offsetHeight; // Trigger reflow
-        wordCountElement.style.animation = null;
+        resetAnimation(wordCountElement);
     });
-    const totalNarrationTimeElement = document.getElementById('total-narration-time');
+    const totalNarrationTimeElement = $('#total-narration-time');
     totalNarrationTimeElement.textContent = `Total word count: ${totalWords} | Total estimated narration time: ${totalTime} minute${totalTime !== 1 ? 's' : ''}`;
-    
-    // Reset animation for total narration time
-    totalNarrationTimeElement.style.animation = 'none';
-    totalNarrationTimeElement.offsetHeight; // Trigger reflow
-    totalNarrationTimeElement.style.animation = null;
-}
+    resetAnimation(totalNarrationTimeElement);
+};
 
-// Function to load and render content
-function loadAndRenderContent() {
+// Reset animation
+const resetAnimation = (element) => {
+    element.style.animation = 'none';
+    element.offsetHeight; // Trigger reflow
+    element.style.animation = null;
+};
+
+// Render subsections
+const renderSubsections = (subsections) => subsections.map(subsection => `
+    <div class="subsection">
+        <h4>${subsection.subtitle}</h4>
+        ${subsection.content.map(c => `<p>${c}</p>`).join('')}
+        ${subsection.voiceover ? `<p class="voiceover">${subsection.voiceover}</p>` : ''}
+        ${subsection.quote ? `<blockquote class="famous-quote">${subsection.quote}</blockquote>` : ''}
+    </div>
+`).join('');
+
+// Load and render content
+const loadAndRenderContent = () => {
     fetch('content.json')
         .then(response => response.json())
         .then(data => {
-            const container = document.getElementById('content-container');
-            container.innerHTML = ''; // Clear existing content
-            data.sections.forEach((section, index) => {
-                const sectionElement = document.createElement('div');
-                sectionElement.className = `section section-${index + 1}`;
-                sectionElement.innerHTML = `
+            const container = $('#content-container');
+            container.innerHTML = data.sections.map((section, index) => `
+                <div class="section section-${index + 1}">
                     <h2>${section.title}</h2>
                     <h3>MOOD</h3>
                     ${section.mood.map(m => `<p>${m}</p>`).join('')}
                     <pre><code>${section.timing}</code></pre>
                     ${renderSubsections(section.subsections)}
                     <div class="word-count"></div>
-                `;
-                container.appendChild(sectionElement);
-            });
+                </div>
+            `).join('');
             countWordsAndEstimateTime();
         })
         .catch(error => console.error('Error loading content:', error));
-}
+};
 
-function renderSubsections(subsections) {
-    return subsections.map(subsection => `
-        <div class="subsection">
-            <h4>${subsection.subtitle}</h4>
-            ${subsection.content.map(c => `<p>${c}</p>`).join('')}
-            ${subsection.voiceover ? `<p class="voiceover">${subsection.voiceover}</p>` : ''}
-            ${subsection.quote ? `<blockquote class="famous-quote">${subsection.quote}</blockquote>` : ''}
-        </div>
-    `).join('');
-}
-
-// Function to toggle rotation and invert colors
-function toggleRotation() {
-    const centeredDiv = document.querySelector('.centered');
-    centeredDiv.classList.toggle('mirrored');
-    document.body.classList.toggle('inverted');
-}
-
-// Function to increase font size
-function increaseFontSize() {
-    const elements = document.querySelectorAll('.centered, .centered *');
-    elements.forEach(element => {
+// Increase font size
+const increaseFontSize = () => {
+    $$('.centered, .centered *').forEach(element => {
         const currentSize = window.getComputedStyle(element).fontSize;
-        const newSize = parseFloat(currentSize) + 2;
-        element.style.fontSize = newSize + 'px';
+        element.style.fontSize = `${parseFloat(currentSize) + 2}px`;
     });
-}
+};
 
-// Add a new function to refresh content
-function refreshContent() {
-    loadAndRenderContent();
-}
-
-// Call loadAndRenderContent when the page loads
-window.onload = function() {
+// Initialize
+window.onload = () => {
+    $('#version').innerText = getVersion();
     loadAndRenderContent();
     cacheBust();
     
-    // Add refresh button functionality
     const refreshButton = document.createElement('button');
     refreshButton.textContent = 'Refresh Content';
-    refreshButton.onclick = refreshContent;
-    document.querySelector('.centered').insertBefore(refreshButton, document.querySelector('hr'));
+    refreshButton.onclick = loadAndRenderContent;
+    $('.centered').insertBefore(refreshButton, $('hr'));
 };
