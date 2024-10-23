@@ -11,10 +11,10 @@ const toggleRotation = () => {
     toggleClass(document.body, 'inverted');
 };
 
-// Version function
+// Updated Version function
 const getVersion = () => {
     const date = new Date();
-    return `Version: ${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+    return `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}.${date.getHours()}${date.getMinutes()}`;
 };
 
 // Cache busting
@@ -75,7 +75,7 @@ const getSubsectionEmoji = (subtitle) => {
     }
 };
 
-// Load and render content
+// Updated Load and render content function
 const loadAndRenderContent = () => {
     fetch('content.json')
         .then(response => response.json())
@@ -93,6 +93,7 @@ const loadAndRenderContent = () => {
                 </div>
             `).join('');
             countWordsAndEstimateTime();
+            $('#version').innerText = capitalize(`Version: ${data.version || getVersion()}`);
         })
         .catch(error => console.error('Error loading content:', error));
 };
@@ -131,7 +132,7 @@ const createEditForm = (section, index) => `
     <button onclick="loadAndRenderContent()">${capitalize('Cancel')}</button>
 `;
 
-// Save section
+// Updated Save section function
 const saveSection = (index) => {
     fetch('content.json')
         .then(response => response.json())
@@ -150,10 +151,18 @@ const saveSection = (index) => {
                 }
             });
             
+            // Update version
+            data.version = getVersion();
+            
             // Here you would typically send the updated data to a server
             // For this example, we'll just update the local content and re-render
             console.log('Updated content:', data);
-            loadAndRenderContent();
+            
+            // Simulate saving to server
+            setTimeout(() => {
+                alert('Content updated successfully!');
+                loadAndRenderContent();
+            }, 500);
         })
         .catch(error => console.error('Error saving content:', error));
 };
@@ -166,9 +175,8 @@ const increaseFontSize = () => {
     });
 };
 
-// Initialize
+// Updated Initialize function
 window.onload = () => {
-    $('#version').innerText = capitalize(getVersion());
     loadAndRenderContent();
     cacheBust();
     
