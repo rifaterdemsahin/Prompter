@@ -86,11 +86,73 @@ const loadAndRenderContent = () => {
                     ${section.mood.map(m => `<p>${m}</p>`).join('')}
                     <pre><code>${section.timing}</code></pre>
                     ${renderSubsections(section.subsections)}
+                    <button class="edit-button" onclick="editSection(${index})">Edit Section</button>
                 </div>
             `).join('');
             countWordsAndEstimateTime();
         })
         .catch(error => console.error('Error loading content:', error));
+};
+
+// Edit section
+const editSection = (index) => {
+    fetch('content.json')
+        .then(response => response.json())
+        .then(data => {
+            const section = data.sections[index];
+            const editForm = createEditForm(section, index);
+            const sectionElement = $(`.section-${index + 1}`);
+            sectionElement.innerHTML = editForm;
+        })
+        .catch(error => console.error('Error loading content for editing:', error));
+};
+
+// Create edit form
+const createEditForm = (section, index) => `
+    <h2><input type="text" id="title-${index}" value="${section.title}"></h2>
+    <h3>MOOD</h3>
+    ${section.mood.map((m, i) => `<input type="text" id="mood-${index}-${i}" value="${m}">`).join('<br>')}
+    <h3>TIMING</h3>
+    <input type="text" id="timing-${index}" value="${section.timing}">
+    ${section.subsections.map((subsection, subIndex) => `
+        <div class="subsection-edit">
+            <h4>${subsection.subtitle}</h4>
+            ${subsection.content.map((c, contentIndex) => `
+                <textarea id="content-${index}-${subIndex}-${contentIndex}">${c}</textarea>
+            `).join('')}
+            ${subsection.voiceover ? `<textarea id="voiceover-${index}-${subIndex}">${subsection.voiceover}</textarea>` : ''}
+            ${subsection.quote ? `<textarea id="quote-${index}-${subIndex}">${subsection.quote}</textarea>` : ''}
+        </div>
+    `).join('')}
+    <button onclick="saveSection(${index})">Save Section</button>
+    <button onclick="loadAndRenderContent()">Cancel</button>
+`;
+
+// Save section
+const saveSection = (index) => {
+    fetch('content.json')
+        .then(response => response.json())
+        .then(data => {
+            const section = data.sections[index];
+            section.title = $(`#title-${index}`).value;
+            section.mood = section.mood.map((_, i) => $(`#mood-${index}-${i}`).value);
+            section.timing = $(`#timing-${index}`).value;
+            section.subsections.forEach((subsection, subIndex) => {
+                subsection.content = subsection.content.map((_, contentIndex) => $(`#content-${index}-${subIndex}-${contentIndex}`).value);
+                if (subsection.voiceover) {
+                    subsection.voiceover = $(`#voiceover-${index}-${subIndex}`).value;
+                }
+                if (subsection.quote) {
+                    subsection.quote = $(`#quote-${index}-${subIndex}`).value;
+                }
+            });
+            
+            // Here you would typically send the updated data to a server
+            // For this example, we'll just update the local content and re-render
+            console.log('Updated content:', data);
+            loadAndRenderContent();
+        })
+        .catch(error => console.error('Error saving content:', error));
 };
 
 // Increase font size
