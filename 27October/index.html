@@ -26,7 +26,7 @@
 
         <h2>💪 CLOSE SKILLS GAPS BY SELF LEARNING WITH AI</h2>
         <h3 id="video-title"></h3>
-        <img id="video-thumbnail" alt="Video Thumbnail">
+        <h3 id="video-thumbnail-prompt">
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 const data = {
@@ -35,7 +35,7 @@
                 };
 
                 document.getElementById("video-title").textContent = data.videotitle;
-                document.getElementById("video-thumbnail").src = `https://via.placeholder.com/150?text=${encodeURIComponent(data.videothumbnailprompt)}`;
+                document.getElementById("video-thumbnail").textContent = data.videothumbnailprompt;
             });
         </script>
         <div id="total-narration-time"></div>
