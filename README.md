@@ -35,3 +35,6 @@ git pull; git add . && git commit -m "Refine task priorities in kanban board" &&
 ```
 
 Sample Page > https://rifaterdemsahin.github.io/Prompter/27October/index.html
+
+
+Git Merge Practical > git config pull.rebase false  # merge
